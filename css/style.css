@@ -427,14 +427,7 @@ button:focus{
 }
 
 .lbox-details h2{
-	font-size: 48px;
-	color: #ffffff;
-	font-weight: 300;
-	position: relative;
-	z-index: 3;
-}
-.lbox-details h0{
-	font-size: 50px;
+  font-size: 50px;
 	font-family: 'Engagement', cursive;
 	color: #ffffff;
 	position: relative;
