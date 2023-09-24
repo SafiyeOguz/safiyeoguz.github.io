@@ -433,6 +433,14 @@ button:focus{
 	position: relative;
 	z-index: 3;
 }
+.lbox-details h0{
+	font-size: 50px;
+	font-family: 'Engagement', cursive;
+	color: #ffffff;
+	position: relative;
+	z-index: 3;
+}
+
 .lbox-details p{
 	color: #ffffff;
 	position: relative;
