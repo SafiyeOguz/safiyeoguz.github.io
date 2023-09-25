@@ -165,17 +165,14 @@
 </div>
 <!-- End About us -->
 
-
+<!--
 <div id="popupWin" class "oguzpopup">
-	<div class = "oguzpopup-contentBox">
-		<div class = "close"></div>
-		<div class = "imgBx">
-			<img src = "images/family-01.jpg">
-		</div>
-		<div class ="oguzpopup-content">
+		<div id="popup" class ="oguzpopup-content">
 			<div>
-				<h3> BAAAAK </h3>
+				<img src = "images/family-01.jpg">
+				<h2> BAAAAK </h2>
 				<p> Çoook güzel bir melek olduğunu hiç unutma olur mu </p>
+				<button type = "button"> OK </button>
 			</div>
 		</div>
 	</div>
@@ -184,24 +181,55 @@
 
 <script>
 
-const element = document.getElementById('popupWin');
+let element = document.getElementById('popup');
 const close = document.querySelector('.close');
 
 window.onload = function (){
 	element.style.display = "none"
 
 	setTimeout (function (){
-		console.log(element.querySelector('.oguzpopup'));
+		console.log(element);
+				console.log("1");
 		element.style.display = "block"
+		openpopup();
 
 	},2000)
+
+	function openpopup(){
+		console.log("2");
+		element.classList.add("open-popup");
+	}
+
 }
 
 close.addEventListener('click',()=>{
 	element.style.display = "none"
-	console.log(element);
+	console.log("3");
+	closepopup();
 })
+
+function closepopup(){
+	console.log("4");
+	element.classList.remove("open-popup");
+}
 </script>
+-->
+<button id="btn">Click me</button>
+
+<script type="module" src="confetti.js">
+
+const btn = document.getElementById("btn")
+
+window.onload = function (){
+
+	setTimeout (function (){
+		console.log(btn);
+		  confetti();
+	},2000)
+
+}
+</script>
+
 
 <!-- Start Story -->
 <div id="story" class="story-box main-timeline-box">
@@ -686,5 +714,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequunt
 <script src="js/form-validator.min.js"></script>
 <script src="js/contact-form-script.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/confetti.js"></script>
 </body>
 </html>
