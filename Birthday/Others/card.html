@@ -1,0 +1,169 @@
+<html lang="en" class=" -webkit-"><head>
+
+  <meta charset="UTF-8">
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/noobplus/pen/MWYGzeY">
+
+
+
+
+  <style id="INLINE_PEN_STYLESHEET_ID">
+    body
+{
+  background-image: linear-gradient(to right top, #1f0537, #380c60, #55108c, #7413bb, #9612eb);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card {
+	 position: relative;
+	 width: 300px;
+	 height: 425px;
+	 border: 10px solid #9612eb;
+	 margin: 60px auto 0 auto;
+	 box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.5)), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+
+background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+	 background-color: #e6f0e6;
+}
+ .card .text-container {
+	 width: 80%;
+	 height: 80%;
+	 margin: auto;
+}
+ .strikethrough {
+	 text-decoration: line-through;
+}
+ .card .text-container #head {
+	 font-family: 'Nobile', sans-serif;
+	 font-size: 1.5em;
+	 margin: 60px auto 60px auto;
+}
+ .card p {
+	 font-size: 1.1em;
+	 line-height: 1.4;
+	 font-family: 'Nobile';
+	 color: #331717;
+	 font-style: italic;
+	 text-align: center;
+	 margin: 30px auto 0px auto;
+}
+ .card .front {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 margin: -10px 0px 0px -10px;
+	 border: 10px solid #9612eb;
+	 backface-visibility: hidden;
+	 background-color: #9612eb;
+	/* background-image: url($cover-image);
+	 */
+	 background-size: contain;
+	 transform-style: preserve-3d;
+	 transform-origin: 0% 50%;
+	 transform: perspective(800px) rotateY(0deg);
+	 transition: all 0.8s ease-in-out;
+}
+ .card:hover .front {
+	 transform: perspective(800px) rotateY(-170deg);
+	 background-color: #41718d;
+}
+ .card:hover .back {
+	 transform: perspective(800px) rotateY(-170deg);
+	 box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	 background-color: #d2dcd2;
+}
+ .card .back {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 border: 10px solid #9612eb;
+	 margin: -10px 0px 0px -10px;
+	 backface-visibility: visible;
+	 filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .5));
+	 transform-style: preserve-3d;
+	 transform-origin: 0% 50%;
+	 transform: perspective(800px) rotateY(0deg);
+	 transition: all 0.8s ease-in-out;
+	 background-color: #e6f0e6;
+	 box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.imgset
+{
+  position: relative;
+  z-index: 1;
+  margin-bottom: -215px;
+}
+.imgset img
+{
+    box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+    border-radius: 5px;
+}
+  </style>
+
+
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="back"></div>
+  <div class="front">
+    <div class="imgset">
+         <img width="100%" src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png">
+       </div>
+  </div>
+  <div class="text-container">
+    <p id="head">Happy Birthday அத்தான்!</p>
+    <p>I hope your special day will bring you lots of happiness, love, and fun. You deserve them a lot. Enjoy!</p>
+    <p>Hope your day goes great!</p>
+  </div>
+</div>
+  <div class="card">
+  <div class="back"></div>
+  <div class="front">
+    <div class="imgset">
+         <img width="100%" src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png">
+       </div>
+  </div>
+  <div class="text-container">
+    <p id="head">Happy Birthday அத்தான்!</p>
+    <p>I hope your special day will bring you lots of happiness, love, and fun. You deserve them a lot. Enjoy!</p>
+    <p>Hope your day goes great!</p>
+  </div>
+</div>
+  <div class="card">
+  <div class="back"></div>
+  <div class="front">
+    <div class="imgset">
+         <img width="100%" src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png">
+       </div>
+  </div>
+  <div class="text-container">
+    <p id="head">Happy Birthday அத்தான்!</p>
+    <p>I hope your special day will bring you lots of happiness, love, and fun. You deserve them a lot. Enjoy!</p>
+    <p>Hope your day goes great!</p>
+  </div>
+</div>
+
+
+
+
+
+</body></html>

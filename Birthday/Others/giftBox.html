@@ -1,0 +1,485 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - birthday gift</title>
+
+    <link rel="canonical" href="https://codepen.io/ElaineXu/pen/EWvGWX">
+
+
+
+
+<style>
+html, body, .container {
+  height: 100%;
+}
+
+body {
+  background: #e74c3c;
+  overflow: hidden;
+}
+
+.merrywrap {
+  position: absolute;
+  right: 40px;
+  left: 40px;
+  bottom: 40px;
+  top: 40px;
+}
+
+.giftbox {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  margin-left: -150px;
+  bottom: 0;
+  z-index: 10;
+}
+.giftbox > div {
+  background: #34495e;
+  position: absolute;
+}
+.giftbox > div:after, .giftbox > div:before {
+  position: absolute;
+  content: "";
+  top: 0;
+}
+.giftbox:after {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  content: "Click Me!";
+  left: 0;
+  bottom: 0;
+  font-size: 24px;
+  text-align: center;
+  transform: rotate(-20deg);
+  transform-origin: 0 0;
+}
+.giftbox .cover {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 25%;
+  z-index: 2;
+}
+.giftbox .cover:before {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  width: 50px;
+  transform: translateX(-50%);
+  background: #fdc56d;
+}
+.giftbox .cover > div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+}
+.giftbox .cover > div:before, .giftbox .cover > div:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: inset 0 0 0 15px #fdc56d;
+  border-radius: 30px;
+  transform-origin: 50% 100%;
+}
+.giftbox .cover > div:before {
+  transform: translateX(-45%) skewY(40deg);
+}
+.giftbox .cover > div:after {
+  transform: translateX(45%) skewY(-40deg);
+}
+.giftbox .box {
+  right: 5%;
+  left: 5%;
+  height: 80%;
+  bottom: 0;
+}
+.giftbox .box:before {
+  width: 50px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fdc56d;
+}
+.giftbox .box:after {
+  width: 100%;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+}
+.icons .row {
+  width: 100%;
+  text-align: center;
+}
+.icons .row span {
+  color: #fff;
+  text-shadow: 5px 5px 0 #ca3121;
+  font-size: 84px;
+  display: inline-block;
+  opacity: 0;
+  transition: transform 0.5s ease-in, opacity 0.7s;
+}
+
+.step-1 .giftbox {
+  animation: wobble 0.5s linear infinite forwards;
+}
+.step-1 .cover {
+  animation: wobble 0.5s linear infinite 0.1s forwards;
+}
+.step-1 .icons .row span {
+  opacity: 1;
+}
+
+.step-2 .giftbox:after {
+  opacity: 0;
+}
+
+.step-3 .giftbox,
+.step-4 .giftbox {
+  opacity: 0;
+  z-index: 1;
+}
+.step-3 .giftbox:after,
+.step-4 .giftbox:after {
+  opacity: 0;
+}
+
+.step-2 .giftbox .cover {
+  animation: flyUp 0.4s ease-in forwards;
+}
+.step-2 .giftbox .box {
+  animation: flyDown 0.2s ease-in 0.05s forwards;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(4deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes flyUp {
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(20deg);
+    opacity: 0;
+  }
+}
+@keyframes flyDown {
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.step-1 .icons .row span {
+  opacity: 0;
+}
+
+.step-1 .icons .row span:first-child {
+  transform: translateY(700%) translateX(600%);
+}
+
+.step-1 .icons .row span:nth-child(2) {
+  transform: translateY(700%) translateX(500%);
+}
+
+.step-1 .icons .row span:nth-child(3) {
+  transform: translateY(700%) translateX(400%);
+}
+
+.step-1 .icons .row span:nth-child(4) {
+  transform: translateY(700%) translateX(300%);
+}
+
+.step-1 .icons .row span:nth-child(5) {
+  transform: translateY(700%) translateX(200%);
+}
+
+.step-1 .icons .row span:nth-child(6) {
+  transform: translateY(700%) translateX(100%);
+}
+
+.step-1 .icons .row span:nth-child(7) {
+  transform: translateY(700%) translateX(0);
+}
+
+.step-1 .icons .row span:nth-child(8) {
+  transform: translateY(700%) translateX(-100%);
+}
+
+.step-1 .icons .row span:nth-child(9) {
+  transform: translateY(700%) translateX(-200%);
+}
+
+.step-1 .icons .row span:nth-child(10) {
+  transform: translateY(700%) translateX(-300%);
+}
+
+.step-1 .icons .row span:nth-child(11) {
+  transform: translateY(700%) translateX(-400%);
+}
+
+.step-1 .icons .row span:nth-child(12) {
+  transform: translateY(700%) translateX(-500%);
+}
+
+.step-1 .icons .row span:nth-child(13) {
+  transform: translateY(700%) translateX(-600%);
+}
+.step-1 .icons .row span:nth-child(14) {
+  transform: translateY(700%) translateX(-700%);
+}
+.step-1 .icons .row span:nth-child(15) {
+  transform: translateY(700%) translateX(-800%);
+}
+.step-1 .icons .row span:nth-child(16) {
+  transform: translateY(700%) translateX(-900%);
+}
+.step-1 .icons .row span:nth-child(17) {
+  transform: translateY(700%) translateX(-1000%);
+}
+.step-1 .icons .row span:nth-child(18) {
+  transform: translateY(700%) translateX(-1100%);
+}
+.step-1 .icons .row span:nth-child(19) {
+  transform: translateY(700%) translateX(-1200%);
+}
+.step-1 .icons .row span:nth-child(20) {
+  transform: translateY(700%) translateX(-1300%);
+}
+.step-1 .icons .row span:nth-child(21) {
+  transform: translateY(700%) translateX(-1400%);
+}
+
+.step-2 .icons .row span:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.step-2 .icons .row span:nth-child(3) {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+.step-2 .icons .row span:nth-child(4) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.step-2 .icons .row span:nth-child(5) {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.step-2 .icons .row span:nth-child(6) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.step-2 .icons .row span:nth-child(7) {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+
+.step-2 .icons .row span:nth-child(8) {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.step-2 .icons .row span:nth-child(9) {
+  -webkit-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+
+.step-2 .icons .row span:nth-child(10) {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.step-2 .icons .row span:nth-child(11) {
+  -webkit-transition-delay: 0.55s;
+  transition-delay: 0.55s;
+}
+
+.step-2 .icons .row span:nth-child(12) {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.step-2 .icons .row span:nth-child(13) {
+  -webkit-transition-delay: 0.65s;
+  transition-delay: 0.65s;
+}
+.step-2 .icons .row span:nth-child(14) {
+  -webkit-transition-delay: 0.70s;
+  transition-delay: 0.70s;
+}
+.step-2 .icons .row span:nth-child(15) {
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+}
+.step-2 .icons .row span:nth-child(16) {
+  -webkit-transition-delay: 0.80s;
+  transition-delay: 0.80s;
+}
+.step-2 .icons .row span:nth-child(17) {
+  -webkit-transition-delay: 0.85s;
+  transition-delay: 0.85s;
+}
+.step-2 .icons .row span:nth-child(18) {
+  -webkit-transition-delay: 0.90s;
+  transition-delay: 0.90s;
+}
+.step-2 .icons .row span:nth-child(19) {
+  -webkit-transition-delay: 0.95s;
+  transition-delay: 0.95s;
+}
+.step-2 .icons .row span:nth-child(20) {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.step-2 .icons span, .step-3 .icons span, .step-4 .icons span {
+  opacity: 0.7;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 0.91);
+}
+
+.step-4 .icons .row span, .step-3 .icons .row span {
+  animation: wobble 0.6s linear infinite forwards;
+}
+
+.step-4 .icons .row span:nth-child(even), .step-3 .icons .row span:nth-child(even) {
+  animation-duration: 0.7s;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+
+
+</head>
+
+<body translate="no">
+
+  <div id="merrywrap" class="merrywrap">
+    <canvas id="snowfall"></canvas>
+    <div class="giftbox">
+      <div class="cover">
+        <div></div>
+      </div>
+      <div class="box"></div>
+    </div>
+    <div class="icons">
+      <div class="row">
+        <span>D</span>
+        <span>e</span>
+        <span>a</span>
+        <span>r</span>
+        <span>L</span>
+        <span>e</span>
+        <span>o</span>
+        <span>n</span>
+      </div>
+      <div class="row">
+      <span class="letter">D</span>
+      <span class="letter">o</span>
+      <span class="letter">ğ</span>
+      <span class="letter">u</span>
+      <span class="letter">m</span>
+      <span class="letter">G</span>
+      <span class="letter">ü</span>
+      <span class="letter">n</span>
+      <span class="letter">ü</span>
+      <span class="letter">n</span>
+      <span class="letter">K</span>
+      <span class="letter">u</span>
+      <span class="letter">t</span>
+      <span class="letter">l</span>
+      <span class="letter">u</span>
+      <span class="letter">O</span>
+      <span class="letter">l</span>
+      <span class="letter">s</span>
+      <span class="letter">u</span>
+      <span class="letter">n</span>
+      </div>
+    </div>
+  </div>
+
+
+      <script id="rendered-js">
+window.onload = function () {
+  var merrywrap = document.getElementById("merrywrap");
+  var box = merrywrap.getElementsByClassName("giftbox")[0];
+  var step = 1;
+  var stepMinutes = [2000, 2000, 1000, 1000];
+  function init() {
+    box.addEventListener("click", openBox, false);
+  }
+  function stepClass(step) {
+    merrywrap.className = 'merrywrap';
+    merrywrap.className = 'merrywrap step-' + step;
+  }
+  function openBox() {
+    if (step === 1) {
+      box.removeEventListener("click", openBox, false);
+    }
+    stepClass(step);
+    if (step === 3) {
+    }
+    if (step === 4) {
+      return;
+    }
+    setTimeout(openBox, stepMinutes[step - 1]);
+    step++;
+  }
+
+  init();
+
+};
+//# sourceURL=pen.js
+    </script>
+
+
+
+
+
+</body></html>

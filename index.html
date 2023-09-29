@@ -214,41 +214,6 @@ function closepopup(){
 }
 </script>
 -->
-<script>
-const btn = document.getElementById("btn")
-
-window.onload = function (){
-
-	setTimeout (function (){
-		console.log(btn);
-playConfetti();
-	},2000)
-
-}
-
-function playConfetti(){
-	var duration = 15 * 1000;
-var animationEnd = Date.now() + duration;
-var defaults = { startVelocity: 15, spread: 360, ticks: 60, zIndex: 10000 };
-
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-var interval = setInterval(function() {
-  var timeLeft = animationEnd - Date.now();
-
-  if (timeLeft <= 0) {
-    return clearInterval(interval);
-  }
-
-  var particleCount = 100 * (timeLeft / duration);
-  // since particles fall down, start a bit higher than random
-  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-}, 250);
-}
-</script>
 
 
 <!-- Start Story -->
@@ -740,6 +705,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequunt
 <script src="js/form-validator.min.js"></script>
 <script src="js/contact-form-script.js"></script>
 <script src="js/custom.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 </body>
 </html>
